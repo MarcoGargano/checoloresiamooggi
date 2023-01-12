@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<!-- <meta name="robots" content="noindex"> -->
+	<!-- Global site tag (gtag.js) - Google Analytics
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKFXH03BX2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-CKFXH03BX2');
+	</script> -->
+
+	<meta charset="utf-8">
+
+	<title>Che colore siamo oggi 🇮🇹 - Regioni Italia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Scopri il colore della tua regione oggi, durante l'emergenza COVID-19.">
+	<meta name="keywords" content="italia, regione, regioni, colore, covid, sars, emergenza">
+	<meta name="author" content="Marco Gargano">
+
+	<link rel="apple-touch-icon" sizes="256x256" href="/img/spin.gif">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/spin.gif">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/spin.gif">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.checoloresiamooggi.info/">
+  <meta property="og:title" content="Che colore siamo oggi?">
+  <meta property="og:image" content="http://www.checoloresiamooggi.info/img/spin.gif">
+  <meta property="og:description" content="Scopri il colore della tua regione oggi, durante l'emergenza COVID-19.">
+  <meta property="og:locale" content="it_IT">
+
+	<meta name="theme-color" content="#222222">
+	<meta name="theme-color" content="#222222">
+	<meta name="msapplication-navbutton-color" content="#222222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#222222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-TileColor" content="#222222">
+
+  <link rel="stylesheet" media="all" href="/css/style.css"/>
+	<script src="https://code.jquery.com/jquery-1.8.2.min.js" integrity="sha256-9VTS8JJyxvcUR+v+RTLTsd0ZWbzmafmlzMmeZO9RFyk=" crossorigin="anonymous"></script>
+  <script src="js/jquery-jvectormap-2.0.5.min.js"></script>
+  <script src="js/jquery-jvectormap-it_regions_merc.js"></script>
+
+	<script type="text/javascript">
+	var _iub = _iub || [];
+	_iub.csConfiguration = {"consentOnContinuedBrowsing":false,"whitelabel":false,"lang":"it","siteId":2121631,"cookiePolicyId":24597051, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-top-center","acceptButtonColor":"#0073CE","acceptButtonCaptionColor":"white","customizeButtonColor":"#DADADA","customizeButtonCaptionColor":"#4D4D4D","rejectButtonColor":"#0073CE","rejectButtonCaptionColor":"white","textColor":"black","backgroundColor":"white" }};
+	</script>
+	<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+
+</head>
+<body>
+	<h2>Scopri il colore della tua regione oggi, durante l'emergenza COVID-19.</h2>
+	<h1>Oggi, <span id="data"></span>che colore siamo? 🇮🇹</h1>
+	<h3>🔴&nbsp;ROSSO &nbsp;&nbsp; 🟠&nbsp;ARANCIONE &nbsp;&nbsp; 🟡&nbsp;GIALLO</h3>
+	<!-- <h1 class="red">🔴 ROSSO</h1>
+	<h1 class="orange">🟠 ARANCIONE</h1>
+	<h1 class="yellow">🟡 GIALLO</h1> -->
+
+	<hr>
+
+  <div id="map"></div>
+	<ul id="list">
+		<li class="orange">Valle d'Aosta</li>
+		<li class="orange">Piemonte</li>
+		<li class="orange">Lombardia</li>
+		<li class="yellow">Toscana</li>
+		<li class="orange">Friuli-Venezia Giulia</li>
+		<li class="orange">Liguria</li>
+		<li class="orange">Emilia-Romagna</li>
+		<li class="orange">Marche</li>
+		<li class="yellow">Trentino-Alto Adige <br>
+		🔴 Provincia Bolzano</li>
+		<li class="orange">Umbria</li>
+		<li class="yellow">Molise</li>
+		<li class="orange">Veneto</li>
+		<li class="orange">Abruzzo</li>
+		<li class="yellow">Lazio</li>
+		<li class="orange">Puglia</li>
+		<li class="yellow">Basilicata</li>
+		<li class="orange">Calabria</li>
+		<li class="red">Sicilia</li>
+		<li class="yellow">Campania</li>
+		<li class="orange">Sardegna</li>
+	</ul>
+
+	<div id="tooltip" class="jvectormap-tip"></div>
+	
+	<hr>
+
+	<p class="gov">Questo NON è un sito ufficiale, leggi tutte le informazioni ufficiali sul <a href="http://www.governo.it/it/coronavirus" title="sito del Governo" target="_blank">sito del Governo</a>.</p>
+	<p><small>Ultimo aggiornamento: 17 gennaio 2021</small></p>
+  
+	<a href="https://www.iubenda.com/privacy-policy/24597051" class="iubenda-white iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+	<a href="https://www.iubenda.com/termini-e-condizioni/24597051" class="iubenda-white iubenda-embed" title="Termini e Condizioni ">Termini e Condizioni</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+
+
+  <script>
+    $(function(){
+
+	    $(document).ready(function () {
+	        var now = new Date();
+	        var nowYear = now.getFullYear();
+	        // var nowMonth = ('0'+ (now.getMonth() + 1));
+					var months = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+	        var nowMonth = months[now.getMonth()];
+	        var nowDate = now.getDate();
+					var days = ['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+					var dayOfWeek = days[now.getDay()]; // dayOfWeek == 'Tuesday'
+	        // alert(nowMonth);
+	        var DateStamp = dayOfWeek.toString() + ' ' + nowDate.toString() + ' ' + nowMonth.toString() + ' ' + nowYear.toString() + ', ';
+	    		// alert(DateStamp);
+					$('#data').append(DateStamp);
+	    });
+
+	    /*
+	    $.getJSON("/js/data.json", function(data){
+				$.each(values.year2021.results , function(k , v ){
+					alert(v)
+					$('#list').append(v);
+				});
+			});
+			*/
+			
+			$(function(){
+			  $.getJSON('/js/data.json', function(data){
+			    new jvm.Map({
+			      map: 'it_regions_merc',
+			      container: $('#map'),
+						zoomOnScroll: false,
+				    backgroundColor: 'transparent',
+				    regionStyle : {
+			        initial : {
+			          stroke : "gray",
+			          "stroke-width" : 1,
+			          "stroke-opacity" : 1
+			        },
+			        hover : {
+			          "stroke-width" : 1,
+			        },
+			      },
+		        /*regionStyle: {
+			        initial: {
+			          fill: '#128da7'
+			        },
+			        hover: {
+		            fill: "#CCCCCC"
+		          }
+			      },*/
+
+				    series: {
+			        regions: [{
+			          scale: {
+			          	'1': '#cc0000',
+				          '2': '#ffa500',
+				          '3': '#ffff00'
+			          },
+			          attribute: 'fill',
+			          values: data['year2021'].results
+			        }]
+			      }
+			    });
+
+			  $('[data-code="IT-23"]').hover( function(){ $('#list li:nth-child(1)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-21"]').hover( function(){ $('#list li:nth-child(2)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-25"]').hover( function(){ $('#list li:nth-child(3)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-52"]').hover( function(){ $('#list li:nth-child(4)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-36"]').hover( function(){ $('#list li:nth-child(5)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-42"]').hover( function(){ $('#list li:nth-child(6)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-45"]').hover( function(){ $('#list li:nth-child(7)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-57"]').hover( function(){ $('#list li:nth-child(8)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-32"]').hover( function(){ $('#list li:nth-child(9)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-55"]').hover( function(){ $('#list li:nth-child(10)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-67"]').hover( function(){ $('#list li:nth-child(11)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-34"]').hover( function(){ $('#list li:nth-child(12)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-65"]').hover( function(){ $('#list li:nth-child(13)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-62"]').hover( function(){ $('#list li:nth-child(14)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-75"]').hover( function(){ $('#list li:nth-child(15)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-77"]').hover( function(){ $('#list li:nth-child(16)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-78"]').hover( function(){ $('#list li:nth-child(17)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-82"]').hover( function(){ $('#list li:nth-child(18)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-72"]').hover( function(){ $('#list li:nth-child(19)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+				$('[data-code="IT-88"]').hover( function(){ $('#list li:nth-child(20)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+
+			  });
+
+			});
+
+    });
+  </script>
+
+</body>
+</html>

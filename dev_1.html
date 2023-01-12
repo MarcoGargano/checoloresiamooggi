@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="robots" content="noindex">
+	<meta charset="utf-8">
+
+	<title>Che colore siamo oggi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Scopri il colore della tua regione oggi, durante l'emergenza Covid.">
+	<meta name="keywords" content="italia, regione, regioni, colore, covid, sars, emergenza">
+	<meta name="author" content="Marco Gargano">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.checoloresiamooggi.info/">
+  <meta property="og:title" content="Che colore siamo oggi?">
+  <meta property="og:image" content="http://www.checoloresiamooggi.info/">
+  <meta property="og:description" content="Scopri il colore della tua regione oggi, durante l'emergenza Covid.">
+  <meta property="og:locale" content="it_IT">
+
+	<meta name="theme-color" content="#222222">
+	<meta name="theme-color" content="#222222">
+	<meta name="msapplication-navbutton-color" content="#222222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#222222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-TileColor" content="#222222">
+
+  <link rel="stylesheet" media="all" href="/css/style.css"/>
+	<script src="https://code.jquery.com/jquery-1.8.2.min.js" integrity="sha256-9VTS8JJyxvcUR+v+RTLTsd0ZWbzmafmlzMmeZO9RFyk=" crossorigin="anonymous"></script>
+  <script src="js/jquery-jvectormap-2.0.5.min.js"></script>
+  <script src="js/jquery-jvectormap-it_regions_merc.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKFXH03BX2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-CKFXH03BX2');
+	</script>
+</head>
+<body>
+	<h4>Scopri il colore della tua regione oggi, durante l'emergenza Covid.</h4>
+	<h2>Oggi, <span id="data"></span>, che colore siamo? 🇮🇹</h2>
+	<h1>🟠 ARANCIONE</h1>
+	
+	<div id="colors"></div>
+  <div id="map"></div>
+	<div id="tooltip" class="jvectormap-tip"></div>
+	
+	<p><small>Ultimo aggiornamento: 12 gennaio 2021</small></p>
+
+  <script>
+    $(function(){
+
+	    $(document).ready(function () {
+	        var now = new Date();
+	        var nowYear = now.getFullYear();
+	        // var nowMonth = ('0'+ (now.getMonth() + 1));
+					var months = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+	        var nowMonth = months[now.getMonth()];
+	        var nowDate = now.getDate();
+					var days = ['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+					var dayOfWeek = days[now.getDay()]; // dayOfWeek == 'Tuesday'
+	        // alert(nowMonth);
+	        var DateStamp = dayOfWeek.toString() + ' ' + nowDate.toString() + ' ' + nowMonth.toString() + ' ' + nowYear.toString();
+	    		// alert(DateStamp);
+					$('#data').append(DateStamp);
+	    });
+
+
+			$('#map').vectorMap({
+				map: 'it_regions_merc',
+				zoomOnScroll: false,
+		    backgroundColor: "transparent",
+		    regionsSelectable: true,
+		    regionsSelectableOne: true,
+
+		    regionStyle: {
+		        initial: {
+		            fill: "gray"
+		        },
+		        selected: {
+		            fill: "black"
+		      }
+		    },
+
+
+    labels: {
+        markers: {
+          render: function(index){
+            return plants[index].name;
+          },
+          offsets: function(index){
+            var offset = plants[index]['offsets'] || [0, 0];
+
+            return [offset[0] - 7, offset[1] + 3];
+          }
+        }
+    },
+    
+    
+		    regionLabelStyle: {
+		      initial: {
+		        fill: '#B90E32'
+		      },
+		      hover: {
+		        fill: 'black'
+		      }
+		    },
+
+				onRegionClick: function (e, code) {
+	        var map = $('#map').vectorMap('get', 'mapObject');
+	        var customTip=$('#tooltip');
+					customTip.html(map.tip.text());
+		      customTip.show();
+		      customTip.append(code + "<p>✕</p>");
+	        customTip.children("p").click(function(){
+	          map.clearSelectedRegions();
+	         	customTip.hide(); 
+        	})
+		    },
+		    onRegionTipShow: function (e, tip, code) {
+		        e.preventDefault();
+		    },
+	    
+		    series: {
+		      regions: [{
+		        scale: {
+		          rosso: 			'#cc0000',
+		          arancione: 	'#ffa500',
+		          giallo: 		'#ffff00'
+		        },
+		        attribute: 'fill',
+		        values: {
+							'IT-23': 'arancione', 	// Valle d'Aosta
+							'IT-21': 'arancione', 	// Piemonte
+							'IT-25': 'rosso', 			// Lombardia
+							'IT-52': 'arancione', 	// Toscana
+							'IT-36': 'arancione', 	// Friuli-Venezia Giulia
+							'IT-42': 'arancione', 	// Liguria
+							'IT-45': 'arancione', 	// Emilia-Romagna
+							'IT-57': 'arancione', 	// Marche
+							'IT-32': 'arancione', 	// Trentino-Alto Adige
+							'IT-55': 'arancione', 	// Umbria
+							'IT-67': 'arancione', 	// Molise
+							'IT-34': 'arancione', 	// Veneto
+							'IT-65': 'arancione', 	// Abruzzo
+							'IT-62': 'arancione', 	// Lazio
+							'IT-75': 'arancione', 	// Apulia
+							'IT-77': 'arancione', 	// Basilicata
+							'IT-78': 'arancione', 	// Calabria
+							'IT-82': 'arancione', 	// Sicily
+							'IT-72': 'arancione', 	// Campania
+							'IT-88': 'arancione', 	// Sardegna
+		        }
+		      }]
+		    }
+		    
+			});
+
+    });
+  </script>
+  
+</body>
+</html>

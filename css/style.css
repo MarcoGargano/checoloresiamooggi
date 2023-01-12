@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap');
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 300;
+	text-align: center;
+	color: black;
+	background-color: #f4f4f4;
+}
+h1 {
+	margin: 8vh 0 2vh;
+	font-weight: 300;
+}
+h1 span {
+	font-weight: 600;
+}
+h1.red {
+	color: red;
+}
+h1.orange {
+	color: orange;
+}
+h1.yellow {
+	color: yellow;
+}
+h2 {
+	font-size: 1rem;
+	color: #aaa;
+}
+h3 {
+	font-size: .8rem;
+}
+hr {
+	width: 100%;
+	display: block;
+	clear: both;
+	opacity: 0;
+}
+
+.gov {
+	background-color: white;
+	border-radius: 4px;
+	display: inline-block;
+  padding: 1rem 2rem;
+  margin: 1rem;
+}
+.gov a, 
+.info a {
+	color: black;
+}
+
+.contenuto {
+	max-width: 640px;
+	margin: 3rem auto;
+	text-align: left;
+	padding: 1rem;
+}
+.contenuto .CookieDeclarationType {
+	border: none !important;
+	background: none;
+}
+#CybotCookiebotDialog {
+	box-shadow: none !important;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBody {
+	max-width: 100% !important;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogPoweredbyLink {
+	display: none !important;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContent {
+	padding: 8px 18px 0 !important;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtons {
+	padding-left: 0 !important;
+}
+#CybotCookiebotDialogBodyContent {
+	font-size: 11px !important;
+}
+#CybotCookiebotDialogBodyContentTitle {
+	font-size: 13px !important;
+}
+#CybotCookiebotDialogBodyButtons a, #CybotCookiebotDialogBodyButtons a:hover {
+  border-radius: 100px !important;
+}
+#CybotCookiebotDialogDetailBody {
+	max-width: calc(100% - 36px) !important;
+	margin: 0 18px !important;
+}
+
+.ball {
+	height: 16px;
+	width: 16px;
+	background-color: orange;
+	position: relative;
+	display: inline-block;
+	border: solid 1px #ccc;
+	border-radius: 100px;
+	margin: 0px 5px -4px 15px;
+}
+.ball.red {
+	background-color: red;
+}
+.ball.orange {
+	background-color: orange;
+}
+.ball.yellow {
+	background-color: yellow;
+}
+.ball.white {
+	background-color: white;
+}
+li .ball {
+	margin: 1px 7px -2px 0;
+}
+#list, 
+#map {
+	max-width: 400px;
+	width: 100%;
+	display: inline-block;
+	margin: 4rem 0 8rem;
+	vertical-align: middle;
+}
+#list {
+	max-width: 200px;
+}
+#list li {
+	cursor: default;
+	width: auto;
+	display: block;
+	text-align: left;
+	font-size: .9rem;
+	list-style: none;
+	margin-left: 0;
+	transition: all .2s ease-in-out;
+	/*padding: .2rem .4rem;
+	margin: .2rem;
+	border-radius: 4px;*/
+}
+#list li:before {
+	content: ' ';
+	height: 16px;
+	width: 16px;
+	background-color: orange;
+	position: relative;
+	display: inline-block;
+  border: solid 1px #ccc;
+	border-radius: 100px;
+	margin: 6px 10px -2px 0px;
+}
+#list li.red {
+	/*color: white;
+	background-color: red;*/
+}
+#list li.red:before {
+	/*content: '🔴 ';*/
+	background-color: red;
+}
+#list li.orange {
+	/*color: white;
+	background-color: orange;*/
+}
+#list li.orange:before {
+	/*content: '🟠 ';*/
+	background-color: orange;
+}
+#list li.yellow {
+	/*color: gray;
+	background-color: yellow;*/
+}
+#list li.yellow:before {
+	/*content: '🟡 ';*/
+	background-color: yellow;
+}
+#list li.white:before {
+	/*content: '⚪ ';*/
+	background-color: white;
+}
+#list li.hover {
+	margin-left: -15px;
+	font-weight: 600;
+}
+
+#map {
+	position: relative;
+	max-width: 560px;
+	height: 400px;
+	overflow: hidden;
+}
+#map:before {
+	content: ' ';
+	position: absolute;
+	height: 320px;
+	width: 320px;
+	background-color: white;
+	top: 8%;
+	left: 18%;
+	z-index: -1;
+	border-radius: 100%;
+	opacity: .1;
+
+		background: linear-gradient(180deg, 
+		#FE0000 8.33%,
+		#FD8C00 8.33%, 16.66%,
+		#FFE500 16.66%, 24.99%,
+		#119F0B 24.99%, 33.32%,
+		#0644B3 33.32%, 41.65%,
+		#C22EDC 41.65%, 49.89%,
+		#FE0000 49.89%, 58.31%,
+		#FD8C00 58.31%, 66.64%,
+		#FFE500 66.64%, 74.97%,
+		#119F0B 74.97%, 83.3%,
+		#0644B3 83.3%, 91.63%,
+		#C22EDC 91.63%
+	);
+	background-size: 200% 200%;
+  transition: all 1s ease-in-out;
+	animation: anim 8s linear reverse infinite;
+}
+#map:hover:before {
+	height: 360px;
+	width: 360px;
+	top: 0;
+	left: calc(50% - 190px);
+	opacity: .1;
+}
+@keyframes anim {
+    0% { background-position: 50% 100% }
+    100% { background-position: 50% 0% }
+}
+
+.jvectormap-container {
+	height: 100%;
+}
+.jvectormap-zoomin, .jvectormap-zoomout {
+	display: none;
+}
+.jvectormap-tip {
+	position: absolute;
+	background: white;
+	border-radius: 4px;
+	padding: 0 .2rem;
+	font-size: .9rem;
+}
+/* .jvectormap-container:before {
+	content: '⚪️';
+	position: absolute;
+	left: calc(50% - 43px);
+	top: -4px;
+	pointer-events: none;
+} */

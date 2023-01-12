@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="cache-control" content="no-cache">
+
+	<title>Che colore siamo oggi 🇮🇹 - Regioni Italia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Scopri quale è il colore della tua regione oggi, durante l'emergenza COVID-19: rosso, arancione, giallo o bianco.">
+	<meta name="keywords" content="italia, regione, regioni, colore, covid, sars, emergenza, cambio">
+	<meta name="author" content="Marco Gargano">
+
+	<link rel="apple-touch-icon" sizes="256x256" href="/img/spin.gif">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/spin.gif">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/spin.gif">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.checoloresiamooggi.info/">
+  <meta property="og:title" content="Che colore siamo oggi?">
+  <meta property="og:image" content="http://www.checoloresiamooggi.info/img/spin.gif">
+  <meta property="og:description" content="Scopri il colore della tua regione oggi, durante l'emergenza COVID-19.">
+  <meta property="og:locale" content="it_IT">
+
+	<meta name="theme-color" content="#222222">
+	<meta name="theme-color" content="#222222">
+	<meta name="msapplication-navbutton-color" content="#222222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#222222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-TileColor" content="#222222">
+
+  <link rel="stylesheet" media="all" href="/css/style.css"/>
+	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9f1735aa-1293-435a-8443-47adef07345f" data-blockingmode="auto" type="text/plain" data-cookieconsent="marketing" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-1.8.2.min.js" integrity="sha256-9VTS8JJyxvcUR+v+RTLTsd0ZWbzmafmlzMmeZO9RFyk=" crossorigin="anonymous"></script>
+  <script src="js/jquery-jvectormap-2.0.5.min.js"></script>
+  <script src="js/jquery-jvectormap-it_regions_merc.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKFXH03BX2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-CKFXH03BX2');
+	</script>
+	<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3923710771701864" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+	<h2>Scopri il colore della tua regione in Italia oggi, durante l'emergenza COVID-19.</h2>
+	<h1>Oggi, <span id="data"></span>che colore siamo? 🇮🇹</h1>
+	<h3><span class="ball red"></span> ROSSO <span class="ball orange"></span> ARANCIONE <span class="ball yellow"></span> GIALLO <span class="ball white"></span> BIANCO</h3>
+
+	<hr>
+
+  <div id="map"></div>
+  <ul id="list">
+		<li class="white">Valle d'Aosta</li>
+		<li class="white">Piemonte</li>
+		<li class="white">Lombardia</li>
+		<li class="white">Toscana</li>
+		<li class="white">Friuli-Venezia Giulia</li>
+		<li class="white">Liguria</li>
+		<li class="white">Emilia-Romagna</li>
+		<li class="white">Marche</li>
+		<li class="white">Trentino-Alto Adige</li>
+		<!-- <br><span class="ball white"></span> Provincia Bolzano -->
+		<li class="white">Umbria</li>
+		<li class="white">Molise</li>
+		<li class="white">Veneto</li>
+		<li class="white">Abruzzo</li>
+		<li class="white">Lazio</li>
+		<li class="white">Puglia</li>
+		<li class="white">Basilicata</li>
+		<li class="white">Calabria</li>
+		<li class="white">Sicilia</li>
+		<li class="white">Campania</li>
+		<li class="white">Sardegna</li>
+	</ul>
+
+	<div id="tooltip" class="jvectormap-tip"></div>
+	
+	<hr>
+	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3923710771701864"
+	     crossorigin="anonymous"></script>
+	<!-- Colore-oggi -->
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-client="ca-pub-3923710771701864"
+	     data-ad-slot="3227344045"
+	     data-ad-format="auto"
+	     data-full-width-responsive="true"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+	<hr>
+
+	<p class="gov">Questo NON è un sito ufficiale, leggi tutte le informazioni ufficiali circa il Dcpm in vigore sul <a href="http://www.governo.it/it/coronavirus" title="sito del Governo" target="_blank">sito del Governo</a>.</p>
+	<p class="info"><small>Ultimo aggiornamento: 29 marzo 2022 - 19:01 - Leggi la <a href="/info.html" target="_blank" title="Privacy">privacy</a>.</small></p>
+
+	<hr>
+
+  <script>
+    $(function(){
+
+	    $(document).ready(function () {
+	        var now = new Date();
+	        var nowYear = now.getFullYear();
+	        // var nowMonth = ('0'+ (now.getMonth() + 1));
+					var months = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+	        var nowMonth = months[now.getMonth()];
+	        var nowDate = now.getDate();
+					var days = ['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+					var dayOfWeek = days[now.getDay()]; // dayOfWeek == 'Tuesday'
+	        // alert(nowMonth);
+	        var DateStamp = dayOfWeek.toString() + ' ' + nowDate.toString() + ' ' + nowMonth.toString() + ' ' + nowYear.toString() + ', ';
+	    		// alert(DateStamp);
+					$('#data').append(DateStamp);
+	    });
+
+	    /*
+	    $.getJSON("/js/data.json", function(data){
+				$.each(values.year2021.results , function(k , v ){
+					alert(v)
+					$('#list').append(v);
+				});
+			});
+			*/
+			
+			$(function(){
+			  $.getJSON('/js/data.json', function(data){
+			    new jvm.Map({
+			      map: 'it_regions_merc',
+			      container: $('#map'),
+						zoomOnScroll: false,
+				    backgroundColor: 'transparent',
+				    regionStyle : {
+			        initial : {
+			          stroke : "#bbbbbb",
+			          "stroke-width" : 2,
+			          "stroke-opacity" : 1
+			        },
+			        hover : {
+			          "stroke-width" : 1,
+			        },
+			      },
+		        /*regionStyle: {
+			        initial: {
+			          fill: '#128da7'
+			        },
+			        hover: {
+		            fill: "#CCCCCC"
+		          }
+			      },*/
+
+				    series: {
+			        regions: [{
+			          scale: {
+			          	'1': '#cc0000',
+				          '2': '#ffa500',
+				          '3': '#ffff00',
+				          '4': '#ffffff'
+			          },
+			          attribute: 'fill',
+			          values: data['year2021'].results
+			        }]
+			      }
+			    });
+				  $('[data-code="IT-23"]').hover( function(){ $('#list li:nth-child(1)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-21"]').hover( function(){ $('#list li:nth-child(2)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-25"]').hover( function(){ $('#list li:nth-child(3)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-52"]').hover( function(){ $('#list li:nth-child(4)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-36"]').hover( function(){ $('#list li:nth-child(5)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-42"]').hover( function(){ $('#list li:nth-child(6)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-45"]').hover( function(){ $('#list li:nth-child(7)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-57"]').hover( function(){ $('#list li:nth-child(8)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-32"]').hover( function(){ $('#list li:nth-child(9)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-55"]').hover( function(){ $('#list li:nth-child(10)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-67"]').hover( function(){ $('#list li:nth-child(11)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-34"]').hover( function(){ $('#list li:nth-child(12)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-65"]').hover( function(){ $('#list li:nth-child(13)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-62"]').hover( function(){ $('#list li:nth-child(14)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-75"]').hover( function(){ $('#list li:nth-child(15)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-77"]').hover( function(){ $('#list li:nth-child(16)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-78"]').hover( function(){ $('#list li:nth-child(17)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-82"]').hover( function(){ $('#list li:nth-child(18)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-72"]').hover( function(){ $('#list li:nth-child(19)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+					$('[data-code="IT-88"]').hover( function(){ $('#list li:nth-child(20)').addClass('hover') }, function(){ $('#list li').removeClass('hover') });
+			  });
+			});
+    });
+  </script>
+
+</body>
+</html>
